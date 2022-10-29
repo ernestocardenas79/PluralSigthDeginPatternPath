@@ -35,6 +35,33 @@ namespace BridgePattern
         }
     }
 
+    public class TwoDaysLicenseMilitaryDiscount : TwoDaysLicense
+    {
+        public TwoDaysLicenseMilitaryDiscount(string movie, DateTime purchaseTime)
+            : base(movie, purchaseTime)
+        {
+        }
+
+        public override decimal GetPrice()
+        {
+            return base.GetPrice() * 0.9m;
+        }
+    }
+
+    public class TwoDaysLicenseSeniorDiscount : TwoDaysLicense
+    {
+        public TwoDaysLicenseSeniorDiscount(string movie, DateTime purchaseTime)
+            : base(movie, purchaseTime)
+        {
+        }
+
+        public override decimal GetPrice()
+        {
+            return base.GetPrice() * 0.8m;
+        }
+    }
+
+
     public class LifeLongLicense : MovieLicense
     {
         public LifeLongLicense(string movie, DateTime purchaseTime)
@@ -50,6 +77,30 @@ namespace BridgePattern
         public override DateTime? GetExpirationDate()
         {
             return null;
+        }
+    }
+    public class LifeLongLicenseMilitaryDiscount : LifeLongLicense
+    {
+        public LifeLongLicenseMilitaryDiscount(string movie, DateTime purchaseTime)
+            : base(movie, purchaseTime)
+        {
+        }
+
+        public override decimal GetPrice()
+        {
+            return base.GetPrice()*0.9m;
+        }
+    }
+    public class LifeLongLicenseSeniorDiscount : LifeLongLicense
+    {
+        public LifeLongLicenseSeniorDiscount(string movie, DateTime purchaseTime)
+            : base(movie, purchaseTime)
+        {
+        }
+
+        public override decimal GetPrice()
+        {
+            return base.GetPrice() * 0.8m;
         }
     }
 }

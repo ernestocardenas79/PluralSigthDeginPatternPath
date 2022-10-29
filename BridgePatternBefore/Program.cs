@@ -11,8 +11,21 @@ namespace BridgePattern
             var license1 = new TwoDaysLicense("Secret Life of Pets", now);
             var license2 = new LifeLongLicense("Matrix", now);
 
+            var license1MilitaryDiscount = new TwoDaysLicenseMilitaryDiscount("Secret Life of Pets", now);
+            var license2MilitaryDiscount = new LifeLongLicenseMilitaryDiscount("Matrix", now);
+            
+            var license1SeniorDiscount = new TwoDaysLicenseSeniorDiscount("Secret Life of Pets", now);
+            var license2SeniorDiscount = new LifeLongLicenseSeniorDiscount("Matrix", now);
+
             PrintLicenseDetails(license1);
             PrintLicenseDetails(license2);
+
+            PrintLicenseDetails(license1MilitaryDiscount);
+            PrintLicenseDetails(license2MilitaryDiscount);
+
+            PrintLicenseDetails(license1SeniorDiscount);
+            PrintLicenseDetails(license2SeniorDiscount);
+
 
             Console.ReadKey();
         }
