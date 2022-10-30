@@ -1,4 +1,6 @@
 ﻿using System;
+using BridgePatternExcersice.Discount;
+using BridgePatternExcersice.License;
 
 namespace BridgePattern
 {
@@ -8,11 +10,24 @@ namespace BridgePattern
         {
             DateTime now = DateTime.Now;
 
-            var license1 = new TwoDaysLicense("Secret Life of Pets", now);
-            var license2 = new LifeLongLicense("Matrix", now);
+            var license1 = new TwoDaysLicense("Secret Life of Pets", now, new NoDiscount());
+            var license2 = new LifeLongLicense("Matrix", now, new NoDiscount());
+
+            var license1MilitaryDiscount = new TwoDaysLicense("Secret Life of Pets", now, new MilitaryDiscount());
+            var license2MilitaryDiscount = new LifeLongLicense("Matrix", now, new MilitaryDiscount());
+
+            var license1SeniorDiscount = new TwoDaysLicense("Secret Life of Pets", now, new SeniorDiscount());
+            var license2SeniorDiscount = new LifeLongLicense("Matrix", now, new SeniorDiscount());
 
             PrintLicenseDetails(license1);
             PrintLicenseDetails(license2);
+
+            PrintLicenseDetails(license1MilitaryDiscount);
+            PrintLicenseDetails(license2MilitaryDiscount);
+
+            PrintLicenseDetails(license1SeniorDiscount);
+            PrintLicenseDetails(license2SeniorDiscount);
+
 
             Console.ReadKey();
         }
