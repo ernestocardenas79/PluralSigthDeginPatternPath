@@ -17,8 +17,15 @@ namespace BridgePattern
             var license1MilitaryDiscount = new MovieLicense("Secret Life of Pets", now, Discount.Military, LicenseType.TwoDays);
             var license2MilitaryDiscount = new MovieLicense("Matrix", now, Discount.Military, LicenseType.LifeLong);
 
+            
             var license1SeniorDiscount = new MovieLicense("Secret Life of Pets", now, Discount.Senior, LicenseType.TwoDays);
             var license2SeniorDiscount = new MovieLicense("Matrix", now, Discount.Senior, LicenseType.LifeLong);
+
+            var license1SeniorDiscountSpecialOffer = new MovieLicense("Secret Life of Pets", now, Discount.Senior, LicenseType.TwoDays, SpecialOffer.TwoDays);
+            var license2SeniorDiscountSpecialOffer = new MovieLicense("Matrix", now, Discount.Senior, LicenseType.LifeLong, SpecialOffer.TwoDays);
+            var license1MilitaryDiscountSpecialOffer = new MovieLicense("Secret Life of Pets", now, Discount.Military, LicenseType.TwoDays, SpecialOffer.TwoDays);
+            
+
 
             PrintLicenseDetails(license1);
             PrintLicenseDetails(license2);
@@ -28,6 +35,10 @@ namespace BridgePattern
 
             PrintLicenseDetails(license1SeniorDiscount);
             PrintLicenseDetails(license2SeniorDiscount);
+
+            PrintLicenseDetails(license1SeniorDiscountSpecialOffer);
+            PrintLicenseDetails(license2SeniorDiscountSpecialOffer);
+            PrintLicenseDetails(license1MilitaryDiscountSpecialOffer);
 
 
             Console.ReadKey();
